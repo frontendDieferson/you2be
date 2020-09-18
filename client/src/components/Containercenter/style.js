@@ -27,53 +27,45 @@ justify-content: center;
 
 
 
+
 `;
 export const Input = styled.input`
+  top: 300px;
+  justify-content: center;
+  align-items: center;
+  width: 768px;
+  height: 66px;
+  border: 2px solid #F80059;
+  border-radius: 8px;
+  text-align:center;
 
-top: 300px;
-
-justify-content: center;
-align-items: center;
-max-width: 768px;
-height: 66px;
-
-
-border: 2px solid #F80059;
-
-border-radius: 8px;
-text-align:center;
 
 `;
 
 
 export const Button = styled.button `
-
-right: 200px;
-top: 300px;
-min-width: 100px;
-max-width: 155px;
-height: 66px;
-margin: 10px;
-
-
-background: #F80059;
-border: 2px solid #F80059;
-box-sizing: border-box;
-border-radius: 8px;
-
-font-family: Roboto;
-font-style: normal;
-font-weight: bold;
-font-size: 24px;
-line-height: 28px;
-
-color: #FFFFFF;
-cursor: pointer;
-&:hover{
-    background: #C31957;
-    border: 2px solid #C31957;
-    transition: 300ms;
-}
+  
+  right: 200px;
+  top: 300px;
+  width: 155px;
+  height: 66px;
+  margin: 10px;
+  background: #F80059;
+  border: 2px solid #F80059;
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  color: #FFFFFF;
+  cursor: pointer;
+  &:hover{
+      background: #C31957;
+      border: 2px solid #C31957;
+      transition: 300ms;
+  }
 
 `;
 
@@ -104,3 +96,49 @@ export const Span = styled.span`
   margin: 5px;
 
 `;
+
+
+
+export const Image = styled.img`
+  display:flex;
+  width: 250px;
+  height: 150px;
+
+  border-radius: 8px;
+  float: left;
+  cursor: pointer;
+  opacity: 0.6;
+  &:hover {
+  opacity: 1.0;
+  transition: 300ms;
+  
+  }
+  
+`;
+
+export const Boxdownload = styled.div`
+
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  justify-items: center;
+  margin-top: 30px;
+ 
+  
+
+`;
+
+export const Boxspan = styled.div`
+  position: absolute;
+  float: left;
+  margin-top: 120px;
+  left: 470px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  opacity: 0.6;
+  cursor: pointer;
+
+`;
+
