@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/frontendDieferson/you2be#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "ytdl-core": "^3.2.2"
   },

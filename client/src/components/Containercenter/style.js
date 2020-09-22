@@ -119,6 +119,7 @@ export const Image = styled.img`
 export const Boxdownload = styled.div`
 
   display:flex;
+  flex-direction:row;
   justify-content: center;
   align-items:center;
   justify-items: center;
@@ -129,15 +130,16 @@ export const Boxdownload = styled.div`
 `;
 
 export const Boxspan = styled.div`
-  position: absolute;
-  float: left;
-  margin-top: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
   left: 470px;
   font-family: Roboto;
   font-style: normal;
   font-weight: 300;
   font-size: 18px;
-  opacity: 0.6;
+  opacity: 0.9;
   cursor: pointer;
 
 `;

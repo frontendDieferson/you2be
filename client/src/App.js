@@ -6,37 +6,81 @@ import Logo from './components/Logo';
 import Containercenter from './components/Containercenter';
 import Containertext from './components/Containertext';
 import Footer from './components/Footer';
+import api from './services/api';
+import fileDownload from 'js-file-download';
+
 
 class App extends Component{
   state = {
-    response: ''
+    response: {},
+    error: null,
+    urlDigitada: ''
   };
 
-  componentDidMount = () => {
-    this.callApi()
-      .then(res => this.setState({ response: res.express }))
-      .catch(err => console.log(err));
+
+  handleFileInfo = (e) => {
+    e.preventDefault();
+    
+    let data = ''
+    api.post('/fileinfo',{
+      url:  this.state.urlDigitada
+    }).then((response) => {
+       data = {
+        id: response.data.videoId,
+        title: response.data.title,
+        thumbnail:response.data.thumbnail.thumbnails[0],
+        url: response.data.video_url,
+      }
+      this.setState({
+        response: data,
+      })
+      
+    }).catch( (e) => {
+      this.setState({
+        error: true
+      })
+      console.log(e);
+    })
+    
+  };
+
+  handleChange = (e) =>{
+    const url = e.target.value
+
+    this.setState({
+      urlDigitada: url
+    })
   }
 
-  callApi = async () => {
-    const response = await fetch('/download');
-    const body = await response.json();
-    if (response.status !== 200) throw Error(body.message);
+  handleDownload = (e) => {
+    const dados = this.state.response;
+    api.get(`/download/${dados.id}`,{
+      responseType: 'blob',
+    }).then((response) => {
+     fileDownload(response.data, `${dados.title}.mp3`)
+    }).catch( (e) => {
 
-    return body;
-  };
+    })
+  }
+
 
 
   render(){
+    const {response} = this.state;
     return (
     <Container>
         <GlobalStyle />
         <Content>
-          <Logo /> 
-          {this.state.response}
-          <Containercenter />
+          <Logo/>
+          <Containercenter 
+          handleFileInfo={this.handleFileInfo}
+          handleChange={this.handleChange}
+          response={response}
+          handleDownload={this.handleDownload}
+          />
           <Containertext />
           <Footer />
+
         </Content>
     </Container>
     )

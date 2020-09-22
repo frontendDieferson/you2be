@@ -1,27 +1,28 @@
 const ytdl = require('ytdl-core')
 
 exports.download = async (req, res) => {
-    const {url} = req.body
+    const {id} = req.params;
 
-    res.removeHeader('Content-Type');
-    res.removeHeader('Content-Disposition') ;
-    const title = await pegaDados(url)
+
+    // res.removeHeader('Content-Type');
+    // res.removeHeader('Content-Disposition') ;
+    
                        
-    res.setHeader('Content-Type', 'audio/mpeg');
-    res.setHeader("Content-Disposition", "attachment; filename=" + title); 
+    // res.setHeader('Content-Type', 'audio/mpeg');
+    // res.setHeader("Content-Disposition", "attachment; filename=download.mp3" ); 
 
-    let mp3 = ytdl(url, {quality:'highestaudio'} );
+    let mp3 = ytdl(id, {quality:'highestaudio'} );
     mp3.pipe(res);                       
                         
-    async function pegaDados(url){
-        try{
-            const dados = await ytdl.getBasicInfo(url)
-            const titulo = removeEspecialChar(dados.videoDetails.title)
-            return titulo;
-        }catch(e){
-            res.send('Ouve um erro')
-        }
-    }
+    // async function pegaDados(url){
+    //     try{
+    //         const dados = await ytdl.getBasicInfo(url)
+    //         const titulo = removeEspecialChar(dados.videoDetails.title)
+    //         return titulo;
+    //     }catch(e){
+    //         res.send('Ouve um erro')
+    //     }
+    // }
     function removeEspecialChar(especialChar){
         especialChar = especialChar.replace(/[,]/giu, '');
         especialChar = especialChar.replace(/[ ]/giu, '%20');
