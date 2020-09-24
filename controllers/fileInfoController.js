@@ -10,10 +10,14 @@ exports.info = async (req, res) => {
                         
     async function pegaDados(url){
         try{
+            
             const dados = await ytdl.getBasicInfo(url)
+            
+            console.log(dados.videoDetails)
             return dados.videoDetails;
         }catch(e){
-            res.send('Ouve um erro')
+            console.log(e)
+           return "Erro"
         }
  
 }

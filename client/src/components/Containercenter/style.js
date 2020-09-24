@@ -1,11 +1,20 @@
-
 import styled from 'styled-components'
 
 export const Container = styled.div`
-
+  width:100%;
   align-items: center;
   justify-content: center;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 414px) {
+    flex-direction: column;
+    width:100%;
+
+   
+  }
   
+ 
 
 `;
 
@@ -16,20 +25,36 @@ align-items: center;
 justify-content: center;
 color: #565656;
 
-
+@media (max-width: 414px) {
+    flex-direction: row;
+    width:auto;
+    
+    
+    
+  }
 
 `;
 
 export const Box = styled.div`
-display: flex;
-align-items: center;
-justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
 
 
 
+  @media (max-width: 414px) {
+    flex-direction: row;
+    width:350px;
+    align-items: center;
+
+  }
 
 `;
 export const Input = styled.input`
+ 
+  align-items: center;
+  justify-content: center;
   top: 300px;
   justify-content: center;
   align-items: center;
@@ -39,6 +64,14 @@ export const Input = styled.input`
   border-radius: 8px;
   text-align:center;
 
+  @media (max-width: 414px) {
+    flex-direction: row;
+    width:350px;
+    margin: auto;
+    
+    
+    
+  }
 
 `;
 
@@ -61,12 +94,22 @@ export const Button = styled.button `
   line-height: 28px;
   color: #FFFFFF;
   cursor: pointer;
+
+  
+
   &:hover{
       background: #C31957;
       border: 2px solid #C31957;
       transition: 300ms;
   }
-
+  @media (max-width: 414px) {
+    width:330px;
+  
+    flex-direction: row;  
+      
+    
+  }
+  
 `;
 
 
@@ -87,6 +130,11 @@ margin-top:10px;
 
 color: #000000;
 
+@media (max-width: 414px) {
+    flex-direction: row;
+  
+    font-size:0.9rem;
+  }
 
 `;
 
@@ -94,6 +142,8 @@ export const Span = styled.span`
 
   color: #F80059;
   margin: 5px;
+
+  
 
 `;
 
@@ -124,9 +174,13 @@ export const Boxdownload = styled.div`
   align-items:center;
   justify-items: center;
   margin-top: 30px;
- 
   
-
+  @media (max-width: 414px) {
+    flex-direction: column;
+  
+    
+  }
+  
 `;
 
 export const Boxspan = styled.div`
@@ -142,5 +196,4 @@ export const Boxspan = styled.div`
   opacity: 0.9;
   cursor: pointer;
 
-`;
-
+`

@@ -5,6 +5,12 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
 
+  @media (max-width: 414px ) {
+    flex-direction: column;
+    width: 100%;
+    
+  }
+
 `;
 
 export const Image = styled.img`
@@ -14,7 +20,13 @@ export const Image = styled.img`
     justify-content: center;
     float: left;
     margin-top: 20px;
+
     
+    @media (max-width: 414px) {
+    flex-direction: column;
+    
+    
+  }
     
 `;
 

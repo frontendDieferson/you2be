@@ -5,6 +5,11 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
 
+  @media (max-width: 414px) {
+    flex-direction: row;
+
+  }
+
 `;
 
 export const Span = styled.span`
@@ -27,5 +32,11 @@ export const Span = styled.span`
    text-align: center;  
 
     color: #000000;
+
+    @media (max-width: 414px) {
+    flex-direction: row;
+      font-size: 0.9rem;
+
+    }
 
 `;
