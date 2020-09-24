@@ -9,6 +9,7 @@ export const Container = styled.div`
     align-items: center;
     align-content: center;
     
+    
 `;
 
 export const Content = styled.div`
