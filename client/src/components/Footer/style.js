@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-   display: flex;
+  display: grid;
   align-items: center;
   justify-content: center;
 
@@ -19,7 +19,7 @@ export const Span = styled.span`
    justify-content: center;
    width: 100%;
    padding: 10px;
-   margin-top: 50px;
+   margin-top: fixed;
    display: flex;
 
    font-family: Roboto;
@@ -37,6 +37,34 @@ export const Span = styled.span`
     flex-direction: row;
       font-size: 0.9rem;
 
+    }
+
+`;
+
+export const P = styled.p`
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+    
+   
+   display: flex;
+
+   font-family: Roboto;
+   font-style: normal;
+   font-weight: 500;
+   font-size: 16px;
+
+   @media (max-width: 414px) {
+    flex-direction: row;
+   }
+`;
+
+export const Image = styled.img`
+
+    margin: 8px;
+
+    @media (max-width: 414px) {
+    flex-direction: row;
     }
 
 `;
